@@ -1,10 +1,9 @@
 "use client";
 
 import { Fragment } from "react";
-import ZoomableCirclePacking from "@/components/ZoomableCirclePacking";
 
 function HomePage() {
-  return <ZoomableCirclePacking />;
+  return null;
 }
 
 export default HomePage;
