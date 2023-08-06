@@ -10,7 +10,7 @@ export default function Document({ children }) {
           strategy="afterInteractive"
           src={
             "https://www.googletagmanager.com/gtag/js?id=G-" +
-            process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+            process.env.GOOGLE_ANALYTICS_ID
           }
         ></Script>
         <Script
@@ -23,7 +23,7 @@ export default function Document({ children }) {
             }
             gtag('js', new Date());
           
-            gtag('config', 'G-YF466VQK9Z');
+            gtag('config', 'G-${process.env.GOOGLE_ANALYTICS_ID}');
             `,
           }}
         />
