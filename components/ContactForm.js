@@ -14,38 +14,49 @@ function ContactForm() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = e.target;
-    setFormState({
-      name: data.name,
-      email: data.email,
-      message: data.message,
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
     });
-
-    // TODO: Send data to server
-
-    // fetch("/api/contact", {
-    //   method: "POST",
-    //   body: JSON.stringify(formState),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Origin": "*",
-    //   },
-    // });
-
-    data.reset();
   };
 
-  useEffect(() => {
-    if (formState.name && formState.email && formState.message) {
-      console.log("Form State: ", formState);
-      router.push("/contact/success");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    async function sendEmail() {
+      const res = await fetch("/api/sendgrid", {
+        method: "POST",
+        body: JSON.stringify(formState),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const { status, message } = await res.json();
+      if (status === "OK") {
+        alert(message);
+        setFormState({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        router.push("/");
+      } else {
+        alert(message);
+      }
     }
-  }, [formState, router]);
+
+    sendEmail();
+  };
 
   return (
     <div className="flex flex-col gap-4 p-4 max-w-[700px] mx-auto">
@@ -56,29 +67,48 @@ function ContactForm() {
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6">
             <div className="flex flex-col gap-4">
-              <Label htmlFor="name">What is your name?</Label>
+              <Label htmlFor="name">Name</Label>
               <Input
                 label="Name"
                 name="name"
                 type="text"
+                value={formState.name}
+                onChange={handleFormChange}
                 placeholder="John Doe"
                 required
               />
             </div>
             <div className="flex flex-col gap-4">
-              <Label htmlFor="email">What is your email?</Label>
+              <Label htmlFor="email">Email</Label>
               <Input
                 label="Email"
                 name="email"
                 type="email"
+                value={formState.email}
+                onChange={handleFormChange}
                 placeholder="john_doe@gmail.com"
                 required
               />
             </div>
-            <Label htmlFor="message">What is your message?</Label>
+            <div className="flex flex-col gap-4">
+              <Label htmlFor="phone">Subject</Label>
+              <Input
+                label="Subject"
+                name="subject"
+                type="text"
+                value={formState.subject}
+                onChange={handleFormChange}
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <Label htmlFor="message">Message</Label>
             <div className="flex flex-col">
               <Textarea
                 label="Message"
+                name="message"
+                value={formState.message}
+                onChange={handleFormChange}
                 placeholder="Your message here..."
                 required
               />
@@ -86,7 +116,7 @@ function ContactForm() {
             <div className="flex justify-end">
               <Button
                 type="submit"
-                className="w-36 rounded-lg bg-indigo-500 text-gray-200 text-lg hover:bg-indigo-400"
+                className="w-36 rounded-lg bg-indigo-500 text-white text-lg hover:bg-indigo-400"
               >
                 Send
               </Button>
