@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 
 import { Fragment } from "react";
 import RootLayout from "./layout";
