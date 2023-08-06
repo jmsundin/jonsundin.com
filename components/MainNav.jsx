@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 
 import Link from "next/link";
 
@@ -57,7 +57,7 @@ export default function MainNav() {
 
   return (
     <Fragment>
-      <div className="flex flex-row p-2 items-center">
+      <div className="flex flex-row p-2 justify-between items-center">
         <div className="flex flex-row items-center">
           <h1 className="text-3xl text-white font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-4xl">
             <Link href="/" className="flex flex-initial items-start p-3">
