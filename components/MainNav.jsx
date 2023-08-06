@@ -57,18 +57,15 @@ export default function MainNav() {
 
   return (
     <Fragment>
-      <div className="flex flex-row p-2 justify-between items-center">
-        <Link
-          href="/"
-          legacyBehavior
-          passHref
-          className="flex flex-initial items-start"
-        >
-          <h1 className="text-3xl text-gray-200 font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-5xl">
-            Jon Sundin
+      <div className="flex flex-row p-2 items-center">
+        <div className="flex flex-row items-center">
+          <h1 className="text-3xl text-white font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-4xl">
+            <Link href="/" className="flex flex-initial items-start p-3">
+              Jon Sundin
+            </Link>
           </h1>
-        </Link>
-        <NavigationMenu className="hidden sm:inline-block sm:mx-auto sm:my-2 sm:p-2 sm:border sm:border-solid-4 sm:border-gray-500 sm:rounded-xl">
+        </div>
+        <NavigationMenu className="hidden sm:inline-block sm:mx-auto sm:my-2 sm:p-2">
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
@@ -112,7 +109,7 @@ export default function MainNav() {
         </NavigationMenu>
 
         {/* Social Media Links */}
-        <div className="flex flex-row w-50 mx-auto gap-5 text-white text-base sm:text-2xl">
+        <div className="flex flex-row p-3 gap-5 text-white text-base sm:text-2xl">
           <Link
             href="https://www.linkedin.com/in/jonsundin/"
             target="_blank"
@@ -166,17 +163,17 @@ export default function MainNav() {
             >
               <div className="flex flex-col w-1/2 justify-center items-center gap-4">
                 <Link href="/" legacyBehavior passHref>
-                  <p className="font-bold text-2xl text-gray-200 p-2 cursor-pointer hover:text-indigo-200 ">
+                  <p className="font-bold text-2xl text-white p-2 cursor-pointer hover:text-indigo-200 ">
                     Home
                   </p>
                 </Link>
                 <Link href="/about-me-with-d3" legacyBehavior passHref>
-                  <p className="font-bold text-2xl text-gray-200 p-2 cursor-pointer hover:text-indigo-200">
+                  <p className="font-bold text-2xl text-white p-2 cursor-pointer hover:text-indigo-200">
                     About Me
                   </p>
                 </Link>
                 <Link href="/contact" legacyBehavior passHref className="">
-                  <p className="font-bold text-2xl text-gray-200 p-2 cursor-pointer hover:text-indigo-200">
+                  <p className="font-bold text-2xl text-white p-2 cursor-pointer hover:text-indigo-200">
                     Contact
                   </p>
                 </Link>
