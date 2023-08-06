@@ -8,7 +8,7 @@ import ForceDirectedGraph from "@/components/ForceDirectedGraph";
 export function VisualizationTabs() {
   return (
     <Tabs defaultValue="zoomableCirclePacking">
-      <TabsList className="grid w-full grid-cols-2">
+      <TabsList className="grid w-full grid-cols-2 text-white bg-indigo-500 border border-solid border-black">
         <TabsTrigger value="zoomableCirclePacking">
           Zoomable Circle Packing
         </TabsTrigger>
