@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import { createElement, useEffect, useRef } from "react";
 
-import { aboutMe } from "@/assets/about-me-data";
+import { aboutMe } from "@/data/about-me-data";
 
 export default function ZoomableCirclePacking() {
   const svgRef = useRef(null);
