@@ -2,7 +2,7 @@
 
 import { Fragment, useRef, useState, useEffect } from "react";
 import * as d3 from "d3";
-import { aboutMe } from "@/assets/about-me-data";
+import { aboutMe } from "@/data/about-me-data";
 import { v4 as uuidv4 } from "uuid";
 
 function ForceDirectedGraph() {
