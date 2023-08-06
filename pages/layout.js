@@ -1,11 +1,13 @@
 import { Fragment } from "react";
 import MainNav from "@/components/MainNav";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
   return (
-    <Fragment>
+    <div className="relative flex flex-col min-h-screen">
       <MainNav />
-      <main>{children}</main>
-    </Fragment>
+      <main className="mb-20">{children}</main>
+      <Footer />
+    </div>
   );
 }
