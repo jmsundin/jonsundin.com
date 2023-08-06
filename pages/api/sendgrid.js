@@ -2,7 +2,7 @@ import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function sendEmail(req, res) {
+async function handler(req, res) {
   const requestBody = req.body;
   console.log(requestBody);
   const msg = {
@@ -25,4 +25,4 @@ async function sendEmail(req, res) {
   res.status(200).json({ status: "OK", message: `Email sent successfully, ${requestBody.name}!` });
 }
 
-export default sendEmail;
+export default handler;
