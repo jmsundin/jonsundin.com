@@ -37,8 +37,6 @@ function ContactForm() {
         body: JSON.stringify(formState),
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Access-Origin": "*",
-          "Access-Control-Request-Method": "POST",
         },
       });
 
