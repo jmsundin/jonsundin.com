@@ -71,7 +71,7 @@ export default async function handler(req, res) {
       message: `Email sent successfully, ${requestBody.name}!`,
     });
   } else {
-    res.status(405).json({ message: "Line 69 error" });
+    res.status(455).json({ message: "Line 69 error" });
   }
 }
 
