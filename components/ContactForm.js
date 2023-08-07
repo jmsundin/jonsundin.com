@@ -39,7 +39,7 @@ function ContactForm() {
           "Content-Type": "application/json",
           "Origin": "*",
           mode: "cors",
-          referrerPolicy: "no-referrer",
+          referrerPolicy: "strict-origin-when-cross-origin",
         },
       });
 
