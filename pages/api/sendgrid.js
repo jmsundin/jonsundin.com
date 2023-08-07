@@ -69,8 +69,8 @@ const allowCors = (fn) => async (req, res) => {
 //   }
 // }
 const handler = (req, res) => {
-  const d = new Date();
-  res.end(d.toString());
+  res.status(200).json({ stats: res.status, message: "Hello" });
+  res.end();
 };
 
 module.exports = allowCors(handler);
