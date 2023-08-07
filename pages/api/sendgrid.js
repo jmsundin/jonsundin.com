@@ -13,7 +13,7 @@ const allowCors = (fn) => async (req, res) => {
     "Access-Control-Allow-Headers",
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
-  if (req.method === "POST") {
+  if (req.method === "OPTIONS") {
     res.status(200).end();
     return;
   }
@@ -69,7 +69,7 @@ const allowCors = (fn) => async (req, res) => {
 //   }
 // }
 const handler = (req, res) => {
-  res.status(200).json({ stats: res.status, message: req.body });
+  res.status(200).json({ status: res.status, message: req.body.message });
   res.end();
 };
 

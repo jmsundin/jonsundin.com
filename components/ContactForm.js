@@ -37,9 +37,6 @@ function ContactForm() {
         body: JSON.stringify(formState),
         headers: {
           "Content-Type": "application/json",
-          "Origin": "*",
-          mode: "cors",
-          referrerPolicy: "strict-origin-when-cross-origin",
         },
       });
 
