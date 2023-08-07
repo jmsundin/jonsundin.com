@@ -1,6 +1,10 @@
 import sendgrid from "@sendgrid/mail";
 
 const allowCors = (fn) => async (req, res) => {
+  console.log("within /api/sendgrid request method: ", req.method);
+  console.log("within /api/sendgrid request headers: ", req.headers);
+  console.log("within /api/sendgrid request body: ", req.body);
+
   res.setHeader("Access-Control-Allow-Credentials", true);
   // res.setHeader("Access-Control-Allow-Origin", "*");
   // another common pattern
@@ -22,8 +26,9 @@ const allowCors = (fn) => async (req, res) => {
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function handler(req, res) {
-  console.log(req.method);
+export default async function handler(req, res) {
+  console.log("within /api/sendgrid: ", req.method);
+  console.log("within /api/sendgrid: ", req.headers);
   if (req.method === "POST") {
     const requestBody = req.body;
     console.log(requestBody);
@@ -70,4 +75,4 @@ async function handler(req, res) {
   }
 }
 
-module.exports = allowCors(handler);
+modules.export = allowCors(handler);
