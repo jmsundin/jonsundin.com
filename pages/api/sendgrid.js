@@ -69,8 +69,12 @@ const allowCors = (fn) => async (req, res) => {
 //   }
 // }
 const handler = (req, res) => {
-  res.status(200).json({ status: res.status, message: req.body.message });
-  res.end();
+  if (req.method === "POST") {
+    res.status(200).json({ status: res.status, message: req.body.message });
+    res.end();
+  } else {
+    res.status(405).json({ message: "Method not allowed" });
+  }
 };
 
 module.exports = allowCors(handler);
