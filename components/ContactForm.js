@@ -36,7 +36,7 @@ function ContactForm() {
         method: "POST",
         body: JSON.stringify(formState),
         headers: {
-          "Content-Type": "application/json",
+          "content-type": "application/json",
         },
       });
 
