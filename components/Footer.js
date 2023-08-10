@@ -2,7 +2,7 @@ import { RiCopyrightLine } from "react-icons/ri";
 
 function Footer() {
   return (
-    <footer className="absolute bottom-0 left-0 right-0">
+    <footer className="absolute left-0 right-0">
       <div className="flex flex-row justify-center text-white p-4">
         <div className="bg-gradient-to-r from-gray-500 to-white h-0.5 w-5/6 mx-auto">
           {" "}
