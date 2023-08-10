@@ -9,8 +9,8 @@ export const aboutMe = {
       value: 1,
       children: [
         {
-          name: "University of California, Fullerton",
-          description: "Masters of Science in Software Engineering",
+          name: "California State University, Fullerton",
+          description: "Masters of Science, Software Engineering",
           value: 1,
           children: [
             {
@@ -63,18 +63,18 @@ export const aboutMe = {
           ],
         },
         {
-          name: "Loma Linda University School of Medicine",
-          description: "Medicine",
+          name: "Loma Linda University, School of Medicine",
+          description: "Doctor of Medicine, MD",
           value: 1,
         },
         {
           name: "Southern Adventist University",
-          description: "Studied Biochemistry",
+          description: "Bachelors of Science, Biochemistry",
           value: 1,
         },
         {
           name: "Wake Technical Community College",
-          description: "Studied Engineering",
+          description: "Associates of Science, Engineering",
           value: 1,
         },
       ],
