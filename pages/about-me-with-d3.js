@@ -1,24 +1,7 @@
 "use client";
-
-import { useState, useRef, useEffect } from "react";
-
 import { VisualizationTabs } from "@/components/VisualizationTabs";
-import ZoomableCirclePacking from "@/components/ZoomableCirclePacking";
-import ForceDirectedGraph from "@/components/ForceDirectedGraph";
-
-// import SmoothZoom from "@/components/SmoothZoom";
 
 function AboutMeWithD3Page() {
-  const [activeVisualization, setActiveVisualization] = useState(null);
-
-  const handleClick = (e) => {
-    const { name } = e.target;
-    e.preventDefault();
-    console.log("name: ", name);
-    setActiveVisualization(name);
-    console.log("activeVisualization: ", activeVisualization);
-  };
-
   return (
     <div className="flex flex-col">
       <div className="flex justify-center rounded-full">
