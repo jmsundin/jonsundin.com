@@ -59,7 +59,7 @@ export default function MainNav() {
     <Fragment>
       <div className="flex flex-row p-2 justify-between items-center">
         <div className="flex flex-row items-center">
-          <h1 className="text-3xl text-white font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-4xl">
+          <h1 className="text-4xl text-white font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-4xl">
             <Link href="/" className="flex flex-initial items-start p-3">
               Jon Sundin
             </Link>
@@ -75,8 +75,18 @@ export default function MainNav() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>About Me</NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <Link href="/about-me-with-d3" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  About Me
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            {/* 
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>
+                <Link href="/about-me-with-d3">D3.js</Link>
+              </NavigationMenuTrigger>
+             <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                   {navComponents.map((component) => (
                     <li key={component.href}>
@@ -97,7 +107,7 @@ export default function MainNav() {
                   ))}
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <Link href="/contact" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
