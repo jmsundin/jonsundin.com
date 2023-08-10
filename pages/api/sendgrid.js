@@ -1,14 +1,12 @@
 import sendgrid from "@sendgrid/mail";
 
-const allowCors = (fn) => async (req, res) => {
-  console.log("within /api/sendgrid request method: ", req.method);
-  console.log("within /api/sendgrid request headers: ", req.headers);
-  console.log("within /api/sendgrid request body: ", req.body);
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
+export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Credentials", true);
-  // res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   // another common pattern
-  res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET,OPTIONS,PATCH,DELETE,POST,PUT"
@@ -21,17 +19,9 @@ const allowCors = (fn) => async (req, res) => {
     res.status(200).end();
     return;
   }
-  return await fn(req, res);
-};
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
-
-export default async function handler(req, res) {
-  console.log("within /api/sendgrid: ", req.method);
-  console.log("within /api/sendgrid: ", req.headers);
   if (req.method === "POST") {
     const requestBody = req.body;
-    console.log(requestBody);
     const msg = {
       to: "jon@infoverse.ai",
       from: "jon@infoverse.ai",
@@ -61,8 +51,9 @@ export default async function handler(req, res) {
       await sendgrid.send(msg);
     } catch (error) {
       console.error(error);
+      console.log(error.response.body);
       return res
-        .status(error.statusCode || 500)
+        .status(error.status || 500)
         .json({ status: error.statusCode, message: `${error.message} line 61 error`, body: { ...error.body } });
     }
 
@@ -70,9 +61,5 @@ export default async function handler(req, res) {
       status: "OK",
       message: `Email sent successfully, ${requestBody.name}!`,
     });
-  } else {
-    res.status(455).json({ message: "Line 69 error" });
   }
 }
-
-modules.export = allowCors(handler);
