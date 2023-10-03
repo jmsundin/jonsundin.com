@@ -8,7 +8,7 @@ function HomePage() {
           {/* Intro and About Me */}
           <section className="flex flex-1 flex-col gap-2">
             <h1 className="text-xl text-center">Welcome!</h1>
-            <span className="bg-gradient-to-r from-gray-500 to-white h-0.5 w-5/6"></span>
+            <span className="bg-gradient-to-r from-gray-500 to-white h-0.5"></span>
             <div className="flex flex-1 flex-col gap-8">
               <article className="flex mt-4 p-2 relative before:absolute before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-500 before:to-white">
                 {" "}
