@@ -1,17 +1,17 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
 
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 import { Fragment } from "react";
-import RootLayout from "./layout";
+import Layout from "@/components/Layout";
 
 function App({ Component, pageProps }) {
   return (
     <Fragment>
-      <RootLayout>
+      <Layout>
         <Component {...pageProps} />
-      </RootLayout>
+      </Layout>
       <Analytics />
     </Fragment>
   );
