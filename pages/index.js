@@ -63,24 +63,33 @@ function HomePage() {
                       <span>Next.js</span>
                     </li>
                     <Link href="/about-me-with-d3">
-                      <li>D3.js</li>
+                      <li className="flex gap-2 justify-center shrink py-2">
+                        <Image
+                          src={D3Icon}
+                          width={20}
+                          height={20}
+                          className="shrink w-5 h-5"
+                          alt="D3 Icon"
+                        />
+                        <span>D3.js</span>
+                      </li>
                     </Link>
-                    <li>Tailwind CSS</li>
+                    <li className="flex gap-2 justify-center shrink py-2">
+                      <SiTailwindcss className="shrink w-6 h-6" />
+                      <span>Tailwind CSS</span>
+                    </li>
                   </ul>
                 </article>
-                <article className="flex flex-col flex-1 gap-2 bg-inherit text-gray-200 p-4">
-                  <h3 className="text-lg text-center">Backend</h3>
-                  <ul className="flex flex-col gap-2 text-center text-sm">
-                    <li>Node.js</li>
-                    <li>Firebase</li>
-                    <li>Vercel</li>
-                  </ul>
-                </article>
-                <article className="flex flex-col flex-1 gap-2 bg-inherit text-gray-200 p-4">
-                  <h3 className="text-lg text-center">Languages</h3>
-                  <ul className="flex flex-col gap-2 text-center text-sm">
-                    <li>JavaScript</li>
-                    <li>Python</li>
+                <article className="flex-1 text-gray-200 px-2 border rounded-lg border-solid border-slate-200">
+                  <ul className="flex flex-col justify-evenly text-sm text-center divide-y divide-dotted divide-slate-500">
+                    <li className="flex gap-2 justify-center py-2">
+                      <RiJavascriptFill className="shrink w-6 h-6"/><span>JavaScript</span></li>
+                    <li className="flex gap-2 justify-center py-2">
+                      <SiPython className="shrink w-6 h-6"/><span>Python</span></li>
+                    <li className="flex gap-2 justify-center py-2">
+                      <RiHtml5Fill className="shrink w-6 h-6"/><span>HTML</span></li>
+                    <li className="flex gap-2 justify-center py-2">
+                      <RiCss3Fill className="shrink w-6 h-6"/><span>CSS</span></li>
                   </ul>
                 </article>
               </div>
@@ -114,7 +123,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
 
