@@ -44,11 +44,9 @@ function ContactForm() {
     let progress = 0;
     setInterval(() => {
       progress += 20;
-      setProgress(progress);
       const timer = setTimeout(() => setProgress(progress), 500);
       if (progress === 100) {
         clearTimeout(timer);
-        setProgress(10);
       }
     }, 200);
   }, [sendingEmail]);
