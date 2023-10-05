@@ -28,7 +28,8 @@ export default function Document({ children }) {
           }}
         />
       </Head>
-      <body className="box-border flex flex-col bg-gradient-to-r from-indigo-950 to-indigo-500">
+      <body className="box-border flex flex-1 flex-col bg-gradient-to-r from-indigo-950 to-indigo-500">
+        { children }
         <Main />
         <NextScript />
       </body>
