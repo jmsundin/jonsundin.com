@@ -16,15 +16,24 @@ import { RiCss3Fill } from "react-icons/ri";
 
 function HomePage() {
   return (
-    <div className="flex text-gray-200 text-base font-medium flex flex-col gap-8 mx-auto p-5 sm:5/6 md:w-4/5">
-      <div className="flex flex-row gap-8">
-        <div className="flex flex-col flex-1 gap-8 sm:flex-row sm:flex-1">
-          {/* Intro and About Me */}
-          <section className="flex flex-1 flex-col gap-2">
-            <h1 className="text-xl text-center">Welcome!</h1>
-            <span className="bg-gradient-to-r from-gray-500 to-white h-0.5"></span>
-            <div className="flex flex-1 flex-col gap-8">
-              <article className="flex mt-4 p-2 relative before:absolute before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-500 before:to-white">
+    <Fragment>
+      <Head>
+        <title>Jon Sundin | Frontend Web Developer | UI/UX Designer</title>
+        <meta
+          name="description"
+          content="Jon Sundin | Frontend Web Developer | UI/UX Designer | React, Next.js, D3.js"
+        />
+      </Head>
+      <div className="flex text-gray-200 text-base font-medium px-4 mx-auto max-w-sm">
+        <div className="flex flex-col gap-2">
+          <section className="flex flex-col gap-2">
+            <h1 className="text-xl text-center">Hi there!</h1>
+            <span className="-mt-1 mx-4 bg-gradient-to-r from-gray-500 to-white h-0.5"></span>
+            <div className="flex flex-col gap-4 mt-2">
+              <article
+                className="flex pl-2 relative before:absolute before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-500 before:to-white"
+                aria-label="About Me"
+              >
                 {" "}
                 <p className="flex ml-4">
                   Hi there! I am a full-stack software engineer, with a focus on
