@@ -35,10 +35,10 @@ function HomePage() {
                 aria-label="About Me"
               >
                 {" "}
-                <p className="flex ml-4">
-                  Hi there! I am a full-stack software engineer, with a focus on
-                  frontend development. I love to build things, and I love to
-                  learn and apply what I learn.
+                <p className="flex text-sm ml-4">
+                  My name is Jon. I am a frontend web developer passionate about
+                  designing user interfaces with the user&apos;s experience in
+                  mind to help achieve intuitive interaction with information.
                 </p>
               </article>
 
