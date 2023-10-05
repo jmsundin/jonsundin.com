@@ -48,16 +48,20 @@ function HomePage() {
               </article>
             </div>
           </section>
-          <div className="flex flex-col flex-1 gap-4">
-            <section className="flex flex-col gap-2 sm:flex-1">
-              <h2 className="text-xl text-center">Skills</h2>
-              <span className="bg-gradient-to-r from-gray-500 to-white h-0.5 w-5/6 mx-auto"></span>
-              <div className="flex gap-2">
-                <article className="flex flex-col flex-1 gap-2 bg-inherit text-gray-200 p-4">
-                  <h3 className="text-lg text-center">Frontend</h3>
-                  <ul className="flex flex-col gap-2 text-center text-sm">
-                    <li>React.js</li>
-                    <li>Next.js</li>
+          <div className="flex flex-col gap-6">
+            <section className="flex flex-col gap-2">
+              <h2 className="text-xl text-center">Tools</h2>
+              <div className="flex flex-row gap-2">
+                <article className="flex-1 text-gray-200 px-2 border rounded-lg border-solid border-slate-200 ">
+                  <ul className="flex flex-col justify-evently text-sm text-center divide-y divide-dotted divide-slate-500">
+                    <li className="flex gap-2 justify-center py-2">
+                      <GrReactjs className="flex-none shrink w-6 h-6" />
+                      <span>React</span>
+                    </li>
+                    <li className="flex gap-2 justify-center shrink py-2">
+                      <TbBrandNextjs className="inline-block w-6 h-6" />
+                      <span>Next.js</span>
+                    </li>
                     <Link href="/about-me-with-d3">
                       <li>D3.js</li>
                     </Link>
