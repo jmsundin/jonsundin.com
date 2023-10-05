@@ -57,13 +57,13 @@ export default function MainNav() {
 
   return (
     <Fragment>
-      <div className="flex flex-row p-2 justify-between items-center">
+      <div className="flex flex-row px-3 min-h-[60px] justify-between items-center">
         <div className="flex flex-row items-center">
-          <h1 className="text-4xl text-white font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-4xl">
-            <Link href="/" className="flex flex-initial items-start p-3">
+          <Link href="/" className="p-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-bold hover:text-indigo-200 cursor-pointer tracking-tight lg:text-4xl">
               Jon Sundin
-            </Link>
-          </h1>
+            </h1>
+          </Link>
         </div>
         <NavigationMenu className="hidden sm:inline-block sm:mx-auto sm:my-2 sm:p-2">
           <NavigationMenuList>
@@ -81,33 +81,6 @@ export default function MainNav() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            {/* 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <Link href="/about-me-with-d3">D3.js</Link>
-              </NavigationMenuTrigger>
-             <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {navComponents.map((component) => (
-                    <li key={component.href}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={component.href}
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        >
-                          <div className="mb-2 text-lg font-medium">
-                            {component.title}
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            {component.description}
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem> */}
             <NavigationMenuItem>
               <Link href="/contact" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
