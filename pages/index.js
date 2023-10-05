@@ -1,4 +1,18 @@
 import Link from "next/link";
+import Head from "next/head";
+import { Fragment } from "react";
+import Image from "next/image";
+
+import { GrReactjs } from "react-icons/gr";
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiTailwindcss } from "react-icons/si";
+import D3Icon from "@/assets/icons/d3js.svg";
+
+import { RiJavascriptFill } from "react-icons/ri";
+import { SiPython } from "react-icons/si";
+import { RiHtml5Fill } from "react-icons/ri";
+import { RiCss3Fill } from "react-icons/ri";
+
 
 function HomePage() {
   return (
