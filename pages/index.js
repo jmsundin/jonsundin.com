@@ -42,7 +42,7 @@ function HomePage() {
                 </p>
               </article>
 
-              <article className="flex p-2 relative before:absolute before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-500 before:to-white">
+              <article className="flex pl-2 relative before:absolute before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-gray-500 before:to-white">
                 {" "}
                 <p className="flex ml-4">
                   I currently work as an individual contributor with Tangible AI
